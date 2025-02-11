@@ -1,6 +1,6 @@
 import askUser from "./askUser.js";
 
-const songIndex = askUser("Enter index of song: ");
+const songIndex = askUser("Escoja el numero de cancion: ");
 
 const songPlaylist = [
   "Con La Brisa, by Ludwig",
@@ -11,7 +11,13 @@ const songPlaylist = [
   "HIGHER, by Bishop Briggs",
 ];
 
-const selectedSong = songPlaylist[Number(songIndex) - 1];
+let selectedSong;
+
+if (Number(songIndex) - 1 >= 0) {
+  selectedSong = songPlaylist[Number(songIndex) - 1];
+} else {
+  selectedSong = songPlaylist[0];
+}
 
 if (Number(songIndex) <= songPlaylist.length) {
   console.log(selectedSong);
